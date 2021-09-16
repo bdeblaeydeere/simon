@@ -1,0 +1,62 @@
+div {
+   
+  
+}
+h1{
+    width: 500px;
+    margin:  0 auto ;
+    text-align: center;
+}
+h2{
+    width: 500px;
+    margin:  0 auto ;
+    text-align: center;
+}
+body {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    height: 100vh
+}
+
+
+td {
+    width: 100px ;
+    height: 100px ;
+    
+}
+table {
+    display: flex;
+    justify-content: center;
+    font-size: 60;
+    
+}
+.square {
+    border: 2px solid black;
+}
+[id="0"]{
+    background-color: yellow;
+    width: 100%;
+    height: 100%;
+}
+[id="1"]{
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+}
+[id="2"]{
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
+[id="3"]{
+    background-color: green;
+    width: 100%;
+    height: 100%;
+}
+
+#resetBoard {
+    width: auto;
+    margin:  0 auto ;
+    text-align: center;
+}
