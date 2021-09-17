@@ -33,28 +33,43 @@ table {
 }
 .square {
     border: 2px solid black;
+    border-radius: 25px;
+    text-align: center;
+
 }
 [id="0"]{
     background-color: yellow;
     width: 100%;
     height: 100%;
+    border-radius: 25px;
+
 }
+
 [id="1"]{
     background-color: blue;
     width: 100%;
     height: 100%;
+    border-radius: 25px;
+
 }
 [id="2"]{
     background-color: red;
     width: 100%;
     height: 100%;
+    border-radius: 25px;
+
 }
 [id="3"]{
     background-color: green;
     width: 100%;
     height: 100%;
-}
+    border-radius: 25px;
 
+}
+/* secondary green color for activation or selection */
+#green.hover {
+    background-color: greenyellow
+}
 #resetBoard {
     width: auto;
     margin:  0 auto ;
