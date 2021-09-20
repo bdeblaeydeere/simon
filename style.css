@@ -23,18 +23,20 @@ body {
 td {
     width: 100px ;
     height: 100px ;
-    
+
 }
 table {
     display: flex;
     justify-content: center;
     font-size: 60;
+
     
 }
 .square {
     border: 2px solid black;
     border-radius: 25px;
     text-align: center;
+
 
 }
 [id="0"]{
@@ -73,8 +75,8 @@ table {
 #green.hover {
     background-color: greenyellow
 }
-#resetBoard {
-    width: auto;
+#startGame {
+    width: 100px;
     margin:  0 auto ;
     text-align: center;
 }

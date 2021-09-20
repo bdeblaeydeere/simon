@@ -1,21 +1,19 @@
 //Initialize global variables and arrays
 let roundCounter = 0
-const  computerPattern = []
-const humanPattern =[]
+let  computerPattern = []
+let humanPattern =[]
+let colorID = ""
 
-const startBtn = document.querySelector('startGame')
+const startBtn = document.getElementById('startGame')
 const getSquares = document.querySelectorAll(".square")
-statusText.innertext = "Let's Play Simon!"
-
-const temptile = document.getElementById("id=red");
-// const sound = document.querySelector(`[id='${color}']`);
-console.log(temptile)
-
+const headingStatus = document.querySelector(".statusText")
+// startBtn.addEventListener("click", clickSquare)
 
 function newGame () {
     level =0
     computerPattern = []
     humanPattern = []
+    computerTurn()
 }
 function initGame () {
     //disable click while computer is showing button presses and tones
@@ -28,80 +26,133 @@ function computerTurn(){
     const colors = ["yellow", "blue", "red","green"]
     const randomColor = colors[Math.floor(Math.random() * colors.length)]
     console.log (randomColor)
+    headingStatus.textContent = "Round: " + roundCounter
     // return randomColor ;
   
     //update the computerPattern array
     computerPattern.push(randomColor)
     console.log(computerPattern)
-
-}
-
-// Computer turn color code start here
-function colorToggle (color) {
-    console.log("delay before")
-    setTimeout (computerSquareColor (color),1000)
-    
+    for (i=0; i < computerPattern.length; i++){
+        console.log (randomColor)
+        
+        activateTile(computerPattern[i])
+    }
 }
 
 function activateTile(color) {
-    const tile = document.querySelector.id=`${color}`  ;
-    // document.getElementById("p2").style.color="blue";
-    console.log(tile)
+    console.log(color)
+     let colorSound = ""   
+    if (color == "yellow"){
+        console.log(color)
+        colorID = "0"
+        console.log(colorID)
+        colorSound = "data-sound='yellow'"
 
-   let tempStyle = document.getElementById("2")
-   console.log(tempStyle)
-   tempStyle.style.opacity= ".20"
-    // const sound = document.querySelector(`[id='${color}']`);
-//   tile.style.opacity=".50"
-    // tile.style.opacity = ".50";
-    // sound.play();
-  
+    }
+    else if (color == "blue"){
+        console.log(color)
+        colorID= "1"
+        console.log(colorID)
+        colorSound = "data-sound='blue'"
+
+    }
+    else if (color == "red"){
+        console.log(color)
+        colorID= "2"
+        console.log(colorID)
+        colorSound = "data-sound='red'"
+    }
+    else if (color == "green"){
+        console.log(color)
+        colorID = "3"
+        console.log(colorID)
+        colorSound = "data-sound='green'"
+
+    }
+    const tile = document.querySelector.id=`${color}`  ;
+    console.log(tile)
+    console.log(colorID)
+
+   let tempStyle = document.getElementById(colorID)
+
+   //    console.log("sound: " +colorSound)
+//    colorSound = document.getElementsByClassName.hidden = (colorSound);
+//    console.log("sound: " +colorSound)
+
+
+//     // colorSound.playAudio()
+    //Toggle Opacity of the square
+    
+    console.log(tempStyle)
+    tempStyle.style.opacity= ".20"
+ 
     setTimeout(() => {
       tempStyle.style.opacity = "1";
-    }, 2000);
+    }, 800);
+    console.log(computerPattern)
+
   }
+function userTurn (event){
+console.log ("userTurn event")
+// let humanClick = document.querySelector.
+//
+if (event.target.id == "0"){
+    console.log(event.target.id)
+    humanColor = "yellow"
+    console.log(humanColor)
+    colorSound = "data-sound='yellow'"
 
-function computerSquareColor (color){
-        
-    let csqTemp = document.querySelector([id = `${color}`])
-    console.log(csqTemp)
-    for (i=0; i<computerPattern.length; i++){
-        let square = document.querySelector(id=`${color}`);
-        console.log(square)
-    }
 }
+else if (event.target.id == "1"){
+    console.log(event.target.id)
+    humanColor = "blue"
+    console.log(humanColor)
+    colorSound = "data-sound='blue'"
 
-function SquareColor (event) {
-    console.log (event)
-    // const squareColor = document.querySelector('[id = '${color}']')
-    let originalColor = event.srcElement.innerText
-    console.log (originalColor)
-    originalColor = "green"
-    if (originalColor == "red") {
-        event.target.style.backgroundColor = "pink"
-    }
-    // event.target.style.backgroundColor = "`light${originalColor}`"
-    event.target.style.backgroundColor = "purple"
-
-    //green.classlist.add('selected');
-    console.log ("temp", event.target.style.backgroundColor)
-    setTimeout (delay,2000);
-    event.target.style.backgroundColor = originalColor
-    console.log(event.target.style.backgroundColor)
-    // event.target.style.backgroundColor = green.classlist.remove('selected')
-    //     moves[event.target.firstElementChild.id] = "red"
-    // event.target.addEventListener("mouseout",)
-    //     console.log (moves)
 }
-// Computer turn color code stop here
+else if (event.target.id == "2"){
+    console.log(event.target.id)
+    humanColor = "red"
+    console.log(humanColor)
+    colorSound = "data-sound='red'"
+}
+else if (event.target.id == "3"){
+    console.log(event.target.id)
+    humanColor = "green"
+    console.log(humanColor)
+    colorSound = "data-sound='green'"
+
+}
+//update human player array
+humanPattern.push(humanColor)
+console.log(humanPattern)
+
+// Compare the results
+console.log("comparing")
+for (i=0; i<computerPattern.length; i++){
+    console.log(computerPattern[i])
+    console.log(humanPattern[i])
+    if (computerPattern[i] !== humanPattern[i]){
+        alert ("No Match.  Game is over")
+
+    }
+    else {
+        alert ("Match")
+        //Start next computer Random color
+    }
+
+    console.log("turn: " + roundCounter)
+    }
+    computerTurn()
+}
 
 
 function clickSquare (event,){
     console.log ("hover event")
     console.log (event)
     event.target.style.opacity=".50";
-    
-    } 
+    userTurn (event)
+} 
     
 function hoverSquare (event,){
 console.log ("hover event")
@@ -113,20 +164,18 @@ function hoverSquareOriginal (event){
     console.log ("hover event")
     console.log (event)
     event.target.style.opacity="1";
-    
-    } 
+} 
 
 for (i=0; i< getSquares.length; i++) {
     getSquares[i].addEventListener("click", clickSquare)
     getSquares[i].addEventListener("mouseover", hoverSquare)
     getSquares[i].addEventListener("mouseout", hoverSquareOriginal)
-
 }
 
 //Testing area to call functions    
-    // computerTurn ()
+    newGame ()
     // console.log(computerPattern)
     // computerTurn()
     // console.log([computerPattern])
-    computerSquareColor("red")
-    activateTile("red")
+    // computerTurn ()
+    // // computerSquareColor("red")
