@@ -4,10 +4,12 @@ let  computerPattern = []
 let humanPattern =[]
 let colorID = ""
 let userClicks = 0
+let clicksLeft = ""
 
 const startBtn = document.getElementById('startGame')
 const getSquares = document.querySelectorAll(".square")
 const headingStatus = document.querySelector(".statusText")
+const turnsStatus = document.querySelector(".turnsText")
 // startBtn.addEventListener("click", clickSquare)
 
 function newGame () {
@@ -36,7 +38,11 @@ function computerTurn(){
     //update the computerPattern array
     computerPattern.push(randomColor)
     // console.log(computerPattern)
-    let i=0
+    // let i=0
+    //Update # of turns left
+    userClicks = 0
+    clicksLeft = computerPattern.length - userClicks
+        turnsStatus.textContent = clicksLeft + " choices left"
     
     // WORKING DISPLAY CODE BETWEEN HERE --->
     let delay = 1
@@ -183,6 +189,10 @@ function userTurn (event){
     //  END - MY OLD LOGIC CHECK
         console.log(humanPattern)
         console.log(humanPattern)
+        clicksLeft = computerPattern.length - userClicks
+        turnsStatus.textContent = clicksLeft + " choices left"
+
+
         if (userClicks === roundCounter){
             computerTurn()
         }
