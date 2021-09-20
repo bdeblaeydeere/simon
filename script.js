@@ -3,6 +3,7 @@ let roundCounter = 0
 let  computerPattern = []
 let humanPattern =[]
 let colorID = ""
+let userClicks = 0
 
 const startBtn = document.getElementById('startGame')
 const getSquares = document.querySelectorAll(".square")
@@ -24,48 +25,56 @@ function computerTurn(){
     //Generate a random color
     roundCounter ++
     const colors = ["yellow", "blue", "red","green"]
+    ///Random color generation based on https://medium.com/front-end-weekly/create-simon-game-in-javascript-d53b474a7416
     const randomColor = colors[Math.floor(Math.random() * colors.length)]
-    console.log (randomColor)
+    // console.log (randomColor)
     headingStatus.textContent = "Round: " + roundCounter
     // return randomColor ;
   
     //update the computerPattern array
     computerPattern.push(randomColor)
-    console.log(computerPattern)
+    // console.log(computerPattern)
+    let i=0
+    
+    // WORKING DISPLAY CODE BETWEEN HERE --->
     for (i=0; i < computerPattern.length; i++){
         console.log (randomColor)
         
         activateTile(computerPattern[i])
     }
+    // <----- WORKING DISPLAY CODE BETWEEN HERE 
+    humanPattern = []
+    userClicks = 0
+
 }
 
 function activateTile(color) {
-    console.log(color)
+    // console.log(color)
      let colorSound = ""   
     if (color == "yellow"){
-        console.log(color)
+        // console.log(color)
         colorID = "0"
-        console.log(colorID)
+        // console.log(colorID)
         colorSound = "data-sound='yellow'"
 
     }
     else if (color == "blue"){
-        console.log(color)
+        // console.log(color)
         colorID= "1"
-        console.log(colorID)
+        // console.log(colorID)
         colorSound = "data-sound='blue'"
 
     }
     else if (color == "red"){
-        console.log(color)
+        // console.log(color)
         colorID= "2"
-        console.log(colorID)
+        // console.log(colorID)
         colorSound = "data-sound='red'"
     }
     else if (color == "green"){
-        console.log(color)
+        // console.log(color)
         colorID = "3"
-        console.log(colorID)
+        // console.log(colorID)
         colorSound = "data-sound='green'"
 
     }
@@ -83,67 +92,79 @@ function activateTile(color) {
 //     // colorSound.playAudio()
     //Toggle Opacity of the square
     
-    console.log(tempStyle)
+    // console.log(tempStyle)
     tempStyle.style.opacity= ".20"
  
     setTimeout(() => {
       tempStyle.style.opacity = "1";
     }, 900);
     console.log(computerPattern)
-
+    console.log(humanPattern)
   }
 function userTurn (event){
-console.log ("userTurn event")
-// let humanClick = document.querySelector.
-//
-if (event.target.id == "0"){
-    console.log(event.target.id)
-    humanColor = "yellow"
-    console.log(humanColor)
-    colorSound = "data-sound='yellow'"
+    console.log ("userTurn event")
+    
+    userClicks ++
+    // let humanClick = document.querySelector.
+    //
+    if (event.target.id == "0"){
+        console.log(event.target.id)
+        humanColor = "yellow"
+        console.log(humanColor)
+        colorSound = "data-sound='yellow'"
 
-}
-else if (event.target.id == "1"){
-    console.log(event.target.id)
-    humanColor = "blue"
-    console.log(humanColor)
-    colorSound = "data-sound='blue'"
+    }
+    else if (event.target.id == "1"){
+        console.log(event.target.id)
+        humanColor = "blue"
+        console.log(humanColor)
+        colorSound = "data-sound='blue'"
 
-}
-else if (event.target.id == "2"){
-    console.log(event.target.id)
-    humanColor = "red"
-    console.log(humanColor)
-    colorSound = "data-sound='red'"
-}
-else if (event.target.id == "3"){
-    console.log(event.target.id)
-    humanColor = "green"
-    console.log(humanColor)
-    colorSound = "data-sound='green'"
+    }
+    else if (event.target.id == "2"){
+        console.log(event.target.id)
+        humanColor = "red"
+        console.log(humanColor)
+        colorSound = "data-sound='red'"
+    }
+    else if (event.target.id == "3"){
+        console.log(event.target.id)
+        humanColor = "green"
+        console.log(humanColor)
+        colorSound = "data-sound='green'"
 
-}
-//update human player array
-humanPattern.push(humanColor)
-console.log(humanPattern)
+    }
+    //update human player array
+    humanPattern.push(humanColor)
+    console.log(humanPattern)
 
-// Compare the results
-console.log("comparing")
-for (i=0; i<computerPattern.length; i++){
-    console.log(computerPattern[i])
-    console.log(humanPattern[i])
-    if (computerPattern[i] !== humanPattern[i]){
-        alert ("No Match.  Game is over")
-
+    // Compare the results
+    console.log("comparing")
+    console.log("user click count: " + userClicks)
+    if (humanPattern[humanPattern.length-1] !== computerPattern[humanPattern.length-1]){
+        console.log ("No Match.  Game is over")
     }
     else {
-        // alert ("Match")
-        //Start next computer Random color
+        console.log ("Match!  Keep going")
     }
-    console.log("turn: " + roundCounter)
-    }
-    humanPattern = []
-    computerTurn()
+
+    // for (i=0; i<humanPattern.length; i++){
+    //     console.log(computerPattern[i])
+    //     console.log(humanPattern[i])
+    //     console.log (computerPattern[i] == humanPattern[i])
+    //     if (computerPattern[i] != humanPattern[i]){
+    //         console.log ("No Match.  Game is over")
+
+    //     }
+    //     else {
+    //         console.log ("Match!  Keep going")
+    //         //Start next computer Random color
+    //     }
+    //     console.log("turn: " + roundCounter)
+    // }
+        console.log(humanPattern)
+        console.log(humanPattern)
+        computerTurn()
 }
 
 
