@@ -11,9 +11,11 @@ const headingStatus = document.querySelector(".statusText")
 // startBtn.addEventListener("click", clickSquare)
 
 function newGame () {
+    roundCounter = 0
     level =0
     computerPattern = []
     humanPattern = []
+    userClicks = 0
     computerTurn()
 }
 function initGame () {
@@ -143,7 +145,9 @@ function userTurn (event){
     console.log("user click count: " + userClicks)
     // Logic idea borrowed from https://www.youtube.com/watch?v=n_ec3eowFLQ&t=3134s around min 54.
     if (humanPattern[humanPattern.length-1] !== computerPattern[humanPattern.length-1]){
-        console.log ("No Match.  Game is over")
+        // console.log ("No Match.  Game is over")
+        alert("Too bad, that's the wrong move!  A new game will start when you click OK.")
+        newGame()
     }
     else {
         console.log ("Match!  Keep going")
