@@ -190,7 +190,12 @@ function userTurn (event){
         console.log(humanPattern)
         console.log(humanPattern)
         clicksLeft = computerPattern.length - userClicks
-        turnsStatus.textContent = clicksLeft + " choices left"
+        if (clicksLeft ==1){
+            turnsStatus.textContent = clicksLeft + " turn left"    
+        }
+        else {
+            turnsStatus.textContent = clicksLeft + " turns left"
+        }
 
 
         if (userClicks === roundCounter){
@@ -225,6 +230,7 @@ for (i=0; i< getSquares.length; i++) {
     getSquares[i].addEventListener("mouseout", hoverSquareOriginal)
 }
 
+startBtn.addEventListener("click", (console.log("start button")) )
 //Testing area to call functions    
     newGame ()
     // console.log(computerPattern)
