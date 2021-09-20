@@ -141,27 +141,29 @@ function userTurn (event){
     // Compare the results
     console.log("comparing")
     console.log("user click count: " + userClicks)
+    // Logic idea borrowed from https://www.youtube.com/watch?v=n_ec3eowFLQ&t=3134s around min 54.
     if (humanPattern[humanPattern.length-1] !== computerPattern[humanPattern.length-1]){
         console.log ("No Match.  Game is over")
     }
     else {
         console.log ("Match!  Keep going")
     }
+    //  MY OLD LOGIC CHECK
+        // for (i=0; i<humanPattern.length; i++){
+        //     console.log(computerPattern[i])
+        //     console.log(humanPattern[i])
+        //     console.log (computerPattern[i] == humanPattern[i])
+        //     if (computerPattern[i] != humanPattern[i]){
+        //         console.log ("No Match.  Game is over")
 
-    // for (i=0; i<humanPattern.length; i++){
-    //     console.log(computerPattern[i])
-    //     console.log(humanPattern[i])
-    //     console.log (computerPattern[i] == humanPattern[i])
-    //     if (computerPattern[i] != humanPattern[i]){
-    //         console.log ("No Match.  Game is over")
-
-    //     }
-    //     else {
-    //         console.log ("Match!  Keep going")
-    //         //Start next computer Random color
-    //     }
-    //     console.log("turn: " + roundCounter)
-    // }
+        //     }
+        //     else {
+        //         console.log ("Match!  Keep going")
+        //         //Start next computer Random color
+        //     }
+        //     console.log("turn: " + roundCounter)
+        // }
+    //  END - MY OLD LOGIC CHECK
         console.log(humanPattern)
         console.log(humanPattern)
         if (userClicks === roundCounter){
