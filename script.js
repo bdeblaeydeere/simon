@@ -88,7 +88,7 @@ function activateTile(color) {
  
     setTimeout(() => {
       tempStyle.style.opacity = "1";
-    }, 800);
+    }, 900);
     console.log(computerPattern)
 
   }
@@ -137,32 +137,32 @@ for (i=0; i<computerPattern.length; i++){
 
     }
     else {
-        alert ("Match")
+        // alert ("Match")
         //Start next computer Random color
     }
-
     console.log("turn: " + roundCounter)
     }
+    humanPattern = []
     computerTurn()
 }
 
 
 function clickSquare (event,){
-    console.log ("hover event")
-    console.log (event)
+    // console.log ("hover event")
+    // console.log (event)
     event.target.style.opacity=".50";
     userTurn (event)
 } 
     
 function hoverSquare (event,){
-console.log ("hover event")
-console.log (event)
+// console.log ("hover event")
+// console.log (event)
 event.target.style.opacity=".50";
 
 } 
 function hoverSquareOriginal (event){
-    console.log ("hover event")
-    console.log (event)
+    // console.log ("hover event")
+    // console.log (event)
     event.target.style.opacity="1";
 } 
 
