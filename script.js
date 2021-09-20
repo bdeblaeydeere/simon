@@ -41,16 +41,33 @@ function computerTurn(){
     // WORKING DISPLAY CODE BETWEEN HERE --->
     for (i=0; i < computerPattern.length; i++){
         console.log (randomColor)
-        
-        activateTile(computerPattern[i])
+        activateTile(computerPattern[i], i)
     }
+   
+
+    // for (i=0; i < computerPattern.length; i++){
+    //     console.log (randomColor)
+    //     myLoop()
+    //     activateTile(computerPattern[i])
+    // }
     // <----- WORKING DISPLAY CODE BETWEEN HERE 
+    //New display code between here
+
+
+   
+       
+    
+    //New display code between here
     humanPattern = []
     userClicks = 0
 
 }
 
-function activateTile(color) {
+function activateTile(color, delay) {
+    console.log("console i:" + delay)
+    //start delay loop
+        setTimeout(function() {
+        
     // console.log(color)
      let colorSound = ""   
     if (color == "yellow"){
@@ -102,6 +119,10 @@ function activateTile(color) {
     }, 900);
     console.log(computerPattern)
     console.log(humanPattern)
+    
+    //Ends the Delay loop
+    }, 900 * delay)
+    
   }
 function userTurn (event){
     console.log ("userTurn event")
