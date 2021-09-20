@@ -164,7 +164,10 @@ function userTurn (event){
     // }
         console.log(humanPattern)
         console.log(humanPattern)
-        computerTurn()
+        if (userClicks === roundCounter){
+            computerTurn()
+        }
+
 }
 
 
