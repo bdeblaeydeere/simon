@@ -39,32 +39,24 @@ function computerTurn(){
     let i=0
     
     // WORKING DISPLAY CODE BETWEEN HERE --->
+    let delay = 1
     for (i=0; i < computerPattern.length; i++){
-        console.log (randomColor)
+        
+        console.log (delay)
+        console.log
         activateTile(computerPattern[i], i)
     }
    
-
-    // for (i=0; i < computerPattern.length; i++){
-    //     console.log (randomColor)
-    //     myLoop()
-    //     activateTile(computerPattern[i])
-    // }
     // <----- WORKING DISPLAY CODE BETWEEN HERE 
-    //New display code between here
-
-
    
-       
-    
-    //New display code between here
     humanPattern = []
     userClicks = 0
 
 }
 
 function activateTile(color, delay) {
-    console.log("console i:" + delay)
+    console.log("computer array" + computerPattern)
+    
     //start delay loop
         setTimeout(function() {
         
@@ -74,28 +66,24 @@ function activateTile(color, delay) {
         // console.log(color)
         colorID = "0"
         // console.log(colorID)
-        colorSound = "data-sound='yellow'"
-
+        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
     }
     else if (color == "blue"){
         // console.log(color)
         colorID= "1"
         // console.log(colorID)
-        colorSound = "data-sound='blue'"
-
+        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
     }
     else if (color == "red"){
         // console.log(color)
         colorID= "2"
         // console.log(colorID)
-        colorSound = "data-sound='red'"
-    }
+        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")    }
     else if (color == "green"){
         // console.log(color)
         colorID = "3"
         // console.log(colorID)
-        colorSound = "data-sound='green'"
-
+        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
     }
     const tile = document.querySelector.id=`${color}`  ;
     console.log(tile)
@@ -103,14 +91,11 @@ function activateTile(color, delay) {
 
    let tempStyle = document.getElementById(colorID)
 
-   //    console.log("sound: " +colorSound)
-//    colorSound = document.getElementsByClassName.hidden = (colorSound);
-//    console.log("sound: " +colorSound)
+    //Play the correct sound for each color  
+    colorSound.play()
 
 
-//     // colorSound.playAudio()
     //Toggle Opacity of the square
-    
     // console.log(tempStyle)
     tempStyle.style.opacity= ".20"
  
@@ -134,30 +119,32 @@ function userTurn (event){
         console.log(event.target.id)
         humanColor = "yellow"
         console.log(humanColor)
-        colorSound = "data-sound='yellow'"
+        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
 
     }
     else if (event.target.id == "1"){
         console.log(event.target.id)
         humanColor = "blue"
         console.log(humanColor)
-        colorSound = "data-sound='blue'"
+        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
 
     }
     else if (event.target.id == "2"){
         console.log(event.target.id)
         humanColor = "red"
         console.log(humanColor)
-        colorSound = "data-sound='red'"
+        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")    
     }
     else if (event.target.id == "3"){
         console.log(event.target.id)
         humanColor = "green"
         console.log(humanColor)
-        colorSound = "data-sound='green'"
+        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
 
     }
     //update human player array
+     //Play the correct sound for each color  
+    colorSound.play()
     humanPattern.push(humanColor)
     console.log(humanPattern)
 
@@ -171,7 +158,7 @@ function userTurn (event){
         newGame()
     }
     else {
-        if (userClicks == 5){
+        if (userClicks == 20){
             alert ("You won!  Awesome job!  You should get out more.  Click OK to play again.")
         }
         else{
