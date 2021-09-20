@@ -150,7 +150,12 @@ function userTurn (event){
         newGame()
     }
     else {
-        console.log ("Match!  Keep going")
+        if (userClicks == 5){
+            alert ("You won!  Awesome job!  You should get out more.  Click OK to play again.")
+        }
+        else{
+            console.log ("Match!  Keep going")
+        }
     }
     //  MY OLD LOGIC CHECK
         // for (i=0; i<humanPattern.length; i++){
