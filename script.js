@@ -220,7 +220,11 @@ function userTurn (event){
 function clickSquare (event,){
     // console.log ("hover event")
     // console.log (event)
-    event.target.style.opacity=".50";
+    event.target.style.opacity=".30";
+    setTimeout(() => {
+        hoverSquare(event);
+      }, 666);
+   
     userTurn (event)
 } 
     
