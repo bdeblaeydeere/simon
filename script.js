@@ -45,7 +45,13 @@ function computerTurn(){
     //Update # of turns left
     userClicks = 0
     clicksLeft = computerPattern.length - userClicks
-        turnsStatus.textContent = clicksLeft + " choices left"
+        if (clicksLeft ==1){
+            turnsStatus.textContent = clicksLeft + " turn left"    
+        }
+        else {
+            turnsStatus.textContent = clicksLeft + " turns left"
+        }
+        // turnsStatus.textContent = clicksLeft + " choices left"
     
     // WORKING DISPLAY CODE BETWEEN HERE --->
     let delay = 1
