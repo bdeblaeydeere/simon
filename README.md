@@ -33,7 +33,7 @@ I used Javascript to change the hover options on the buttons, control the game f
 - As a player, I want to know what round of the game I am in so that I know how far I've made it.
 - As a player, I want to be able to read the colors on the button in case I am color blind and cannot distinguish certain colors from each other.
 - As a player, I want a simple to use interface so I can play right away.
-- As a player, I want to know if I win by matching all 35 moves by the computer.
+- As a player, I want to know if I win by matching all 20 moves by the computer.
 - 
 ## What's left?
 - Enhance button pushes and sounds to be smoother.
