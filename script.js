@@ -107,13 +107,13 @@ function activateTile(color, delay) {
    let tempStyle = document.getElementById(colorID)
 
     //Play the correct sound for each color  
-    colorSound.play()
 
 
     //Toggle Opacity of the square
     // console.log(tempStyle)
     tempStyle.style.opacity= ".20"
- 
+    colorSound.play()
+
     setTimeout(() => {
       tempStyle.style.opacity = "1";
     }, 600);
