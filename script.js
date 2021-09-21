@@ -116,7 +116,7 @@ function activateTile(color, delay) {
  
     setTimeout(() => {
       tempStyle.style.opacity = "1";
-    }, 900);
+    }, 600);
     console.log(computerPattern)
     console.log(humanPattern)
     
