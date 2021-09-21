@@ -18,7 +18,11 @@ function newGame () {
     computerPattern = []
     humanPattern = []
     userClicks = 0
-    computerTurn()
+    if (level == 0){
+        setTimeout(() => {
+            computerTurn();
+          }, 2000);
+        }
 }
 function testFunc () {
     console.log("Test function area")
@@ -71,24 +75,24 @@ function activateTile(color, delay) {
         // console.log(color)
         colorID = "0"
         // console.log(colorID)
-        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
+        colorSound = new Audio ("simonSound4.mp3")
     }
     else if (color == "blue"){
         // console.log(color)
         colorID= "1"
         // console.log(colorID)
-        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
+        colorSound = new Audio ("simonSound3.mp3")
     }
     else if (color == "red"){
         // console.log(color)
         colorID= "2"
         // console.log(colorID)
-        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")    }
+        colorSound = new Audio ("simonSound1.mp3")    }
     else if (color == "green"){
         // console.log(color)
         colorID = "3"
         // console.log(colorID)
-        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
+        colorSound = new Audio ("simonSound2.mp3")
     }
     const tile = document.querySelector.id=`${color}`  ;
     // console.log(tile)
@@ -124,27 +128,27 @@ function userTurn (event){
         // console.log(event.target.id)
         humanColor = "yellow"
         // console.log(humanColor)
-        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
+        colorSound = new Audio ("simonSound4.mp3")
 
     }
     else if (event.target.id == "1"){
         // console.log(event.target.id)
         humanColor = "blue"
         // console.log(humanColor)
-        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
+        colorSound = new Audio ("simonSound3.mp3")
 
     }
     else if (event.target.id == "2"){
         // console.log(event.target.id)
         humanColor = "red"
         // console.log(humanColor)
-        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")    
+        colorSound = new Audio ("simonSound1.mp3")    
     }
     else if (event.target.id == "3"){
         // console.log(event.target.id)
         humanColor = "green"
         // console.log(humanColor)
-        colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
+        colorSound = new Audio ("simonSound2.mp3")
 
     }
     //update human player array
