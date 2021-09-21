@@ -16,11 +16,12 @@
   }
 
 
-
-div{
-   
-  
+#container{
+    border: 2px solid black;
+    width: auto;
+    height: auto;
 }
+
 h1{
     width: 500px;
     margin:  0 auto ;
@@ -32,35 +33,34 @@ h2{
     text-align: center;
 }
 body {
-    background-color: gray;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    height: 100vh
+    height: 100vh;
+    width: auto;
 }
 
 
 td {
-    width: 100px ;
-    height: 100px ;
+  
 
 }
 table {
     display: flex;
     justify-content: center;
     font-size: 60;
-
+    
     
 }
+
 .square {
     border: 2px solid black;
     border-radius: 25px;
     text-align: center;
     box-shadow: 5px 5px 5px #636060;
     font-size: var(--font-size--default);
-
-
-
 }
+
 [id="0"]{
     background-color: yellow;
     color: #4A4A4A;
@@ -68,7 +68,8 @@ table {
     height: 100%;
     border-radius: 25px;
     background: radial-gradient(circle, rgba(197,204,77,1) 30%, rgba(255,255,0,1) 70%);
-
+    width: 100px ;
+    height: 100px ;
 }
 
 [id="1"]{
@@ -78,7 +79,8 @@ table {
     height: 100%;
     border-radius: 25px;
     background: radial-gradient(circle, rgba(80,138,191,1) 30%, rgba(0,0,255,1) 70%);
-
+    width: 100px ;
+    height: 100px ;
 }
 
 [id="2"]{
@@ -88,7 +90,8 @@ table {
     height: 100%;
     border-radius: 25px;
     background: radial-gradient(circle, rgba(205,130,98,1) 30%, rgba(255,0,0,1) 70%);
-
+    width: 100px ;
+    height: 100px ;
 }
 #red{
     opacity: .20;
@@ -101,6 +104,8 @@ table {
     height: 100%;
     border-radius: 25px;
     background: radial-gradient(circle, rgba(126,191,126,1) 30%, rgba(0,128,0,1) 70%);
+    width: 100px ;
+    height: 100px ;
 }
 /* secondary green color for activation or selection */
 #green.hover {
