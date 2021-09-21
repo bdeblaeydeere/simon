@@ -231,7 +231,7 @@ for (i=0; i< getSquares.length; i++) {
     getSquares[i].addEventListener("mouseover", hoverSquare)
     getSquares[i].addEventListener("mouseout", hoverSquareOriginal)
 }
-resetBtn.addEventListener("click", newGame) 
+resetBtn.addEventListener("click", newGame)  
 
 //Testing area to call functions    
     newGame ()
