@@ -163,7 +163,7 @@ function userTurn (event){
     // Logic idea borrowed from https://www.youtube.com/watch?v=n_ec3eowFLQ&t=3134s around min 54.
     if (humanPattern[humanPattern.length-1] !== computerPattern[humanPattern.length-1]){
         // console.log ("No Match.  Game is over")
-        alert("Too bad, that's the wrong move!  A new game will start when you click OK.")
+        alert("Too bad, that's the wrong move!  The next color was " + computerPattern[humanPattern.length-1] + "." +  "\r\n \r\n A new game will start when you click OK or Close.")
         newGame()
     }
     else {
