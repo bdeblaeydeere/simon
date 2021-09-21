@@ -180,22 +180,7 @@ function userTurn (event){
             console.log ("Match!  Keep going")
         }
     }
-    //  MY OLD LOGIC CHECK
-        // for (i=0; i<humanPattern.length; i++){
-        //     console.log(computerPattern[i])
-        //     console.log(humanPattern[i])
-        //     console.log (computerPattern[i] == humanPattern[i])
-        //     if (computerPattern[i] != humanPattern[i]){
-        //         console.log ("No Match.  Game is over")
 
-        //     }
-        //     else {
-        //         console.log ("Match!  Keep going")
-        //         //Start next computer Random color
-        //     }
-        //     console.log("turn: " + roundCounter)
-        // }
-    //  END - MY OLD LOGIC CHECK
         // console.log(humanPattern)
         // console.log(humanPattern)
         clicksLeft = computerPattern.length - userClicks
