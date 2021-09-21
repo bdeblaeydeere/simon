@@ -92,8 +92,8 @@ function activateTile(color, delay) {
         colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
     }
     const tile = document.querySelector.id=`${color}`  ;
-    console.log(tile)
-    console.log(colorID)
+    // console.log(tile)
+    // console.log(colorID)
 
    let tempStyle = document.getElementById(colorID)
 
@@ -122,29 +122,29 @@ function userTurn (event){
     // let humanClick = document.querySelector.
     //
     if (event.target.id == "0"){
-        console.log(event.target.id)
+        // console.log(event.target.id)
         humanColor = "yellow"
-        console.log(humanColor)
+        // console.log(humanColor)
         colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
 
     }
     else if (event.target.id == "1"){
-        console.log(event.target.id)
+        // console.log(event.target.id)
         humanColor = "blue"
-        console.log(humanColor)
+        // console.log(humanColor)
         colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
 
     }
     else if (event.target.id == "2"){
-        console.log(event.target.id)
+        // console.log(event.target.id)
         humanColor = "red"
-        console.log(humanColor)
+        // console.log(humanColor)
         colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")    
     }
     else if (event.target.id == "3"){
-        console.log(event.target.id)
+        // console.log(event.target.id)
         humanColor = "green"
-        console.log(humanColor)
+        // console.log(humanColor)
         colorSound = new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
 
     }
@@ -155,8 +155,8 @@ function userTurn (event){
     console.log(humanPattern)
 
     // Compare the results
-    console.log("comparing")
-    console.log("user click count: " + userClicks)
+    // console.log("comparing")
+    // console.log("user click count: " + userClicks)
     // Logic idea borrowed from https://www.youtube.com/watch?v=n_ec3eowFLQ&t=3134s around min 54.
     if (humanPattern[humanPattern.length-1] !== computerPattern[humanPattern.length-1]){
         // console.log ("No Match.  Game is over")
@@ -187,8 +187,8 @@ function userTurn (event){
         //     console.log("turn: " + roundCounter)
         // }
     //  END - MY OLD LOGIC CHECK
-        console.log(humanPattern)
-        console.log(humanPattern)
+        // console.log(humanPattern)
+        // console.log(humanPattern)
         clicksLeft = computerPattern.length - userClicks
         if (clicksLeft ==1){
             turnsStatus.textContent = clicksLeft + " turn left"    
@@ -199,7 +199,10 @@ function userTurn (event){
 
 
         if (userClicks === roundCounter){
-            computerTurn()
+            setTimeout(() => {
+                computerTurn();
+              }, 2000);
+            
         }
 
 }
