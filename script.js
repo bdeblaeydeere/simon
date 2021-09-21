@@ -6,11 +6,11 @@ let colorID = ""
 let userClicks = 0
 let clicksLeft = ""
 
-const startBtn = document.getElementById('startGame')
+const resetBtn = document.getElementById('resetBtn')
 const getSquares = document.querySelectorAll(".square")
 const headingStatus = document.querySelector(".statusText")
 const turnsStatus = document.querySelector(".turnsText")
-// startBtn.addEventListener("click", clickSquare)
+// resetBtn.addEventListener("click", clickSquare)
 
 function newGame () {
     roundCounter = 0
@@ -20,9 +20,8 @@ function newGame () {
     userClicks = 0
     computerTurn()
 }
-function initGame () {
-    //disable click while computer is showing button presses and tones
-    //startBtn.classList.add ('hidden')
+function testFunc () {
+    console.log("Test function area")
 }
 
 function computerTurn(){
@@ -218,7 +217,7 @@ function clickSquare (event,){
 function hoverSquare (event,){
 // console.log ("hover event")
 // console.log (event)
-event.target.style.opacity=".50";
+event.target.style.opacity=".65";
 
 } 
 function hoverSquareOriginal (event){
@@ -232,8 +231,8 @@ for (i=0; i< getSquares.length; i++) {
     getSquares[i].addEventListener("mouseover", hoverSquare)
     getSquares[i].addEventListener("mouseout", hoverSquareOriginal)
 }
+resetBtn.addEventListener("click", newGame) 
 
-startBtn.addEventListener("click", (console.log("start button")) )
 //Testing area to call functions    
     newGame ()
     // console.log(computerPattern)

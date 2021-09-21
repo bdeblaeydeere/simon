@@ -56,6 +56,7 @@ table {
     border-radius: 25px;
     text-align: center;
     box-shadow: 5px 5px 5px #636060;
+    font-size: var(--font-size--default);
 
 
 
@@ -105,7 +106,7 @@ table {
 #green.hover {
     background-color: greenyellow
 }
-#startGame {
+#resetBtn {
     width: 100px;
     margin:  0 auto ;
     text-align: center;
